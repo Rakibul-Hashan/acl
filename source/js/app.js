@@ -2,7 +2,7 @@
    ACL storefront — router, views, cart, checkout.
    No build step: plain ES modules. 3D lives in jar3d.js.
    ============================================================ */
-import { CONFIG, asset, HAS_WA, SITE, CALL } from './config.js';
+import { CONFIG, asset, WA, HAS_WA, SITE, CALL } from './config.js';
 import { PRODUCTS, BUNDLES, FAQ, REVIEWS, bySlug, sizeOf, bundlePricing, minPrice, validateCatalog } from './data.js';
 import { DISTRICTS, docs } from './pages.js';
 import { I } from './icons.js';
@@ -20,7 +20,7 @@ const store = {
   get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* private mode */ } },
 };
-const waLink = text => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`;
+const waLink = text => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
 const labelImg = (p, s) => asset(`assets/labels/${(s && s.label) || p.label}.webp`);
 const thumbOf = (p, s) => (p.cardImg ? asset(p.cardImg) : labelImg(p, s));
 const patOf = p => (p.slug === 'seed-mix' ? 'seed-mix' : p.label);
