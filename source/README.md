@@ -7,6 +7,15 @@ Orders must have somewhere to go. Set **at least one** of these in `js/config.js
 
 If neither is set, a customer can place an order but it never reaches you. The browser console then shows: "ACL: no order channel is set".
 
+## Free backend: Google Sheet + Telegram + live order status
+No server or CMS needed. Follow the steps at the top of `tools/google-apps-script.gs` (about 10 minutes), then paste the `/exec` URL into `orderWebhook`. You get:
+- every order as a row in a Google Sheet, which works as your admin panel, including on the phone app
+- an instant Telegram message to the owner for each new order (the bot token stays inside Google, never on GitHub)
+- a live progress bar on the customer's order page. Change **স্ট্যাটাস** in the Sheet: নতুন → কনফার্মড → পাঠানো হয়েছে → ডেলিভারড (or বাতিল)
+- anything you type in **গ্রাহকের জন্য নোট** (e.g. "Steadfast ট্র্যাকিং: 123456") shows on the customer's page
+
+The website only reads status and that note, never names, phones or addresses.
+
 ## Settings (`js/config.js`)
 | Setting | What it does |
 |---|---|

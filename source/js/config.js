@@ -45,9 +45,10 @@ export const CONFIG = {
     web3formsKey: '7b31fd01-9b8f-47c3-9c35-c5de05714216',
   },
 
-  // Optional second copy: POST each order as JSON to a Google Apps Script web app
-  // (see tools/google-apps-script.gs). Leave '' to disable.
-  orderWebhook: '',
+  // FREE BACKEND: Google Sheet + Apps Script (see tools/google-apps-script.gs).
+  // Paste its /exec URL here and you get: every order saved in a Sheet, an instant Telegram
+  // message to the owner, and a LIVE order-status page. The owner changes the status in the Sheet.
+  orderWebhook: 'https://script.google.com/macros/s/AKfycbwM0uvjpmX8BTHKKyCp7QWiRaZ50XQEUCtfkm4ByUM_D-jBSdCE9wgZsGn7YMwRb4nKDA/exec',
   // Simple shared key the Apps Script checks (filters random bots; not a secret).
   orderWebhookKey: 'acl-orders',
 

@@ -435,6 +435,15 @@ a.oid{font-size:18px;font-weight:700;text-decoration:none;color:var(--red)}
 .no-wa a[href^="https://wa.me/"],.no-wa .waband{display:none!important}
 .no-wa .ctas{grid-template-columns:minmax(0,1fr)}
 
+/* live status */
+.st-tick.off{background:#c0392b;box-shadow:0 0 0 12px #fdecea,0 16px 30px -10px rgba(192,57,43,.5)}
+.tl.s-stop .dotc{background:#c0392b;border-color:#c0392b}
+.tl.s-stop b{color:#c0392b}
+.st-live{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 18px;margin-top:12px;display:grid;gap:8px}
+.st-note{margin:0;background:#fff8e6;border:1px solid #f3dca0;border-radius:12px;padding:10px 12px}
+.stb{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:999px;background:#eaf8ef;color:#13703a;vertical-align:middle}
+.stb:empty{display:none}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
